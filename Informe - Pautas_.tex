@@ -1,0 +1,165 @@
+\documentclass[10pt]{article}
+\textheight  = 21cm
+\textwidth   = 15cm
+\topmargin = -0.5 cm
+\oddsidemargin= 1cm
+
+\usepackage{amsmath}
+\usepackage[utf8]{inputenx}
+\usepackage[spanish]{babel}
+\usepackage[pdftex]{graphicx} 	%  uso de graficos en general
+\usepackage{subfigure} 		%  poder poner dos graficos como parte de uno
+\usepackage{fancyhdr} 		%  encabezado diferente para pag pares e impares
+\usepackage{epstopdf} 		%  Convertir .eps a .pdf (si fuera necesario)
+\usepackage{titling}
+\usepackage{fancyvrb,fancybox,calc} 
+\usepackage[svgnames]{xcolor} 
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{subcaption}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % busca en este orden! 
+
+\parindent=0mm
+
+\definecolor{light-gray}{gray}{0.94}
+\definecolor{textgray}{gray}{0.5}
+\newenvironment{verbcode}{\VerbatimEnvironment
+  \begin{Sbox} \color{textgray}\scriptsize
+  \begin{minipage}{\linewidth+2\fboxsep-2\fboxrule-12pt}    
+  \begin{Verbatim}
+}{\end{Verbatim}  
+  \end{minipage}   
+  \end{Sbox} \color{black}\normalsize
+  \fcolorbox{black}{light-gray}{\TheSbox} 
+} 
+
+
+\begin{document}
+\begin{center}
+
+\textsc{\LARGE Instrumentación Biomédica I}\\[0.2cm]
+\textsc{\Large Instituto Tecnológico de Buenos Aires}\\[0.2cm]
+
+% Title
+\HRule \\[0.2cm]
+{ \huge \bfseries  TP X - NOMBRE DEL TP \\[0.2cm] }
+\HRule \\[1cm]
+
+\begin{multicols}{2}
+
+% Author and supervisor
+{\raggedright{}
+\large
+\emph{Profesores:} \ \  Hernán   \textsc{Soares}\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Luciana \textsc{Vartabedian} \\
+}
+
+% Integrantes
+\columnbreak
+{\raggedright{}
+\large
+%\newline
+\emph{Alumnos/as:}\  Nombre1  \textsc{Apellido1} \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Nombre2  \textsc{Apellido2}\\
+\  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Nombre3  \textsc{Apellido3}\\
+%\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lisa \textsc{Simpson} \\
+%\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Maggie \textsc{Simpson} \\
+}
+\end {multicols}
+
+\vspace{0.5cm}
+
+\begin{adjustbox}{max width=\textwidth}
+
+\tabulinesep=1.8mm
+
+  \begin{tabu}{|  l | c |}
+    \hline
+     \ \ \ Presentación  &       \ \ \  \ \ \  \ \ \   \ \ \ \ \ \  \\ \hline
+     \ \ \ Desarrollo &  \\ \hline
+     \ \ \ Conclusiones &   \\ \hline
+    \ \ \  Nota Final &  \\ \hline \hline
+     \ \ \  Firma y Fecha  \ \ \ \ \ \ \ \ \ &   \\
+    \hline
+  \end{tabu}
+\end{adjustbox}
+
+\end{center}
+
+\vspace{0.2cm}
+
+
+\pagestyle{fancy}
+\headheight=60pt 	%para cambiar el tamaño del encabezado
+\fancyhead[L]	{	Instrumentación Biomédica  -  ITBA - 2023   	}					
+\fancyhead[R] 	{	TP X  }
+
+
+
+%=======================================================================================================
+
+\section{Consideraciones básicas}
+
+\begin{itemize}
+    \item El trabajo deberá contar con entre 2 y 4 carillas de longitud (sin contar carátula, índice, anexo y bibliografía).
+    \item Deberá poseer el formato del latex presente.
+    \item El trabajo deberá ser conciso, demostrando su conocimiento del tema estudiado y su capacidad de síntesis.
+    \item Todo resultado deberá traer aparejado su justificación teórica.
+    \item Al final del trabajo deberá haber una sección de conclusiones, donde se destaquen los principales puntos del trabajo práctico.
+    \item Buscar relacionar los conceptos desarrollados con las aplicaciones posibles en bioingeniería.
+\end{itemize}
+
+
+
+\section{Gráficos y tablas}
+
+\begin{itemize}
+    \item Al utilizar gráficos con esquemas de circuitos en conjunto con graficas de señal, tener cuidado de mantener una notación coherente entre ambos gráficos, esto es, si en un gráfico la tensión del resistor se indica como $V_R$, en los demas gráficos no puede figurar como $V_0$, $v_R$, etc.
+    \item Al presentar gráficas de señal todos los ejes deben estar indicados tanto en escala como unidad. ([V ], [mA], [Hz], etc)
+    \item Al presentar gráficas de osciloscopio es importante que se observen las unidades por división de cada canal y eje horizontal. Asimismo es importante aclarar a que señal corresponde cada canal en el circuito eléctrico. Indicar con colores o flechas sobre la gráfica del osciloscopio.
+    \item En caso de requerir presentar varios bodes, se deberán mostrar todos en un mismo par de ejes, en distintos colores, para facilitar la comparación entre ellos.
+    \item Los cuadros deberán tener el siguiente formato: 
+
+    \begin{figure} [H]
+        \centering
+        \includegraphics[scale=0.6]{tablaConsigna.png}
+    \end{figure}
+
+\end{itemize}
+    
+
+
+\section{Notación y bibliografía}
+
+\begin{itemize}
+    \item Al utilizar material de otros autores (no generado por ustedes) es mandatorio citar las fuentes. Latex permite referenciar de manera elegante.
+    \item Utilizar las mismas notaciones para las unidades a lo largo del práctico.
+    \item Todos los resultados se deben presentar con sus unidades correspondientes.
+\end{itemize}
+
+
+\section{Otras consideraciones}
+
+\begin{itemize}
+    \item El trabajo deberá ser enviado a la cátedra a más tardar el día final de entrega, al finalizar el horario de clase. En caso de no cumplir, se descontará 1 punto del trabajo por cada plazo de 24 horas atrasado.
+    \item La presentación se tomará en cuenta. Si el mismo no cumple con los requisitos aquí mencionados, se descontará 1 punto de la nota total.
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+	
